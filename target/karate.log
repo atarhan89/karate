@@ -1,0 +1,31 @@
+15:07:08.998 [main] INFO  io.gatling.compiler.ZincCompiler$ - compiling 5 Scala sources and 3 Java sources to C:\Users\ASUS\OneDrive\Masaüstü\a\karate_demo\target\test-classes ...
+15:07:17.881 [main] INFO  io.gatling.compiler.ZincCompiler$ - done compiling
+15:07:19.986 [main] INFO  i.g.c.config.GatlingConfiguration$ - Gatling will try to load 'gatling.conf' config file as ClassLoader resource.
+15:07:21.032 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:07:22.279 [main] ERROR io.gatling.app.Gatling$ - Run crashed
+java.lang.NumberFormatException: Cannot parse null string
+	at java.base/java.lang.Integer.parseInt(Integer.java:630)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at scala.collection.StringOps$.toInt$extension(StringOps.scala:908)
+	at callers.performanceRunners.APISimulation.<init>(APISimulation.scala:24)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:347)
+	at java.base/java.lang.Class.newInstance(Class.java:645)
+	at io.gatling.app.SimulationClass$Scala.params(SimulationClass.scala:31)
+	at io.gatling.app.Runner.run0(Runner.scala:62)
+	at io.gatling.app.Runner.run(Runner.scala:49)
+	at io.gatling.app.Gatling$.start(Gatling.scala:87)
+	at io.gatling.app.Gatling$.fromArgs(Gatling.scala:49)
+	at io.gatling.app.Gatling$.main(Gatling.scala:38)
+	at io.gatling.app.Gatling.main(Gatling.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.gatling.mojo.MainWithArgsInFile.runMain(MainWithArgsInFile.java:53)
+	at io.gatling.mojo.MainWithArgsInFile.main(MainWithArgsInFile.java:34)
+15:07:22.359 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.actor.CoordinatedShutdown - Running CoordinatedShutdown with reason [ActorSystemTerminateReason]
