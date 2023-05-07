@@ -1,31 +1,68 @@
-15:07:08.998 [main] INFO  io.gatling.compiler.ZincCompiler$ - compiling 5 Scala sources and 3 Java sources to C:\Users\ASUS\OneDrive\Masaüstü\a\karate_demo\target\test-classes ...
-15:07:17.881 [main] INFO  io.gatling.compiler.ZincCompiler$ - done compiling
-15:07:19.986 [main] INFO  i.g.c.config.GatlingConfiguration$ - Gatling will try to load 'gatling.conf' config file as ClassLoader resource.
-15:07:21.032 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:07:22.279 [main] ERROR io.gatling.app.Gatling$ - Run crashed
-java.lang.NumberFormatException: Cannot parse null string
-	at java.base/java.lang.Integer.parseInt(Integer.java:630)
-	at java.base/java.lang.Integer.parseInt(Integer.java:786)
-	at scala.collection.StringOps$.toInt$extension(StringOps.scala:908)
-	at callers.performanceRunners.APISimulation.<init>(APISimulation.scala:24)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:128)
-	at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:347)
-	at java.base/java.lang.Class.newInstance(Class.java:645)
-	at io.gatling.app.SimulationClass$Scala.params(SimulationClass.scala:31)
-	at io.gatling.app.Runner.run0(Runner.scala:62)
-	at io.gatling.app.Runner.run(Runner.scala:49)
-	at io.gatling.app.Gatling$.start(Gatling.scala:87)
-	at io.gatling.app.Gatling$.fromArgs(Gatling.scala:49)
-	at io.gatling.app.Gatling$.main(Gatling.scala:38)
-	at io.gatling.app.Gatling.main(Gatling.scala)
+18:30:51.108 [main] INFO  io.gatling.compiler.ZincCompiler$ - compiling 5 Scala sources and 3 Java sources to C:\Users\ASUS\OneDrive\Masaüstü\a\karate_demo\target\test-classes ...
+18:30:54.920 [main] ERROR io.gatling.compiler.ZincCompiler$ - C:/Users/ASUS/OneDrive/Masaüstü/a/karate_demo/src/test/java/callers/performanceRunners/CDArticleSimulation.scala:4:8: object CreateTokens is not a member of package helpers
+import helpers.CreateTokens
+       ^
+18:30:54.935 [main] ERROR io.gatling.compiler.ZincCompiler$ - C:/Users/ASUS/OneDrive/Masaüstü/a/karate_demo/src/test/java/callers/performanceRunners/CDArticleSimulation.scala:11:3: not found: value CreateTokens
+  CreateTokens.createAccessTokens()
+  ^
+18:30:55.032 [main] ERROR io.gatling.compiler.ZincCompiler$ - C:/Users/ASUS/OneDrive/Masaüstü/a/karate_demo/src/test/java/callers/performanceRunners/CDArticleSimulation.scala:21:58: not found: value CreateTokens
+  val tokenFeeder = Iterator.continually (Map("token" -> CreateTokens.getNextToken))
+                                                         ^
+18:30:55.236 [main] ERROR io.gatling.compiler.ZincCompiler$ - three errors found
+18:30:55.242 [main] ERROR io.gatling.compiler.ZincCompiler$ - Compilation crashed
+sbt.internal.inc.CompileFailed: Compilation failed
+	at sbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:335)
+	at sbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:420)
+	at sbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)
+	at io.gatling.compiler.ZincCompiler$.doCompile(ZincCompiler.scala:257)
+	at io.gatling.compiler.ZincCompiler$.delayedEndpoint$io$gatling$compiler$ZincCompiler$1(ZincCompiler.scala:264)
+	at io.gatling.compiler.ZincCompiler$delayedInit$body.apply(ZincCompiler.scala:41)
+	at scala.Function0.apply$mcV$sp(Function0.scala:39)
+	at scala.Function0.apply$mcV$sp$(Function0.scala:39)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:17)
+	at scala.App.$anonfun$main$1(App.scala:76)
+	at scala.App.$anonfun$main$1$adapted(App.scala:76)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:563)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:561)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:926)
+	at scala.App.main(App.scala:76)
+	at scala.App.main$(App.scala:74)
+	at io.gatling.compiler.ZincCompiler$.main(ZincCompiler.scala:41)
+	at io.gatling.compiler.ZincCompiler.main(ZincCompiler.scala)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at io.gatling.mojo.MainWithArgsInFile.runMain(MainWithArgsInFile.java:53)
 	at io.gatling.mojo.MainWithArgsInFile.main(MainWithArgsInFile.java:34)
-15:07:22.359 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.actor.CoordinatedShutdown - Running CoordinatedShutdown with reason [ActorSystemTerminateReason]
+Caused by: xsbt.InterfaceCompileFailed: null
+	at xsbt.CachedCompiler0.handleErrors(CompilerBridge.scala:183)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:172)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:134)
+	at xsbt.CompilerBridge.run(CompilerBridge.scala:39)
+	at sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:91)
+	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:192)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at sbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:247)
+	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:182)
+	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)
+	at sbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)
+	at sbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)
+	at sbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:210)
+	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:528)
+	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:528)
+	at sbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:177)
+	at sbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:175)
+	at sbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:461)
+	at sbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)
+	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)
+	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)
+	at sbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)
+	at sbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:416)
+	at sbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:503)
+	at sbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:403)
+	at sbt.internal.inc.Incremental$.apply(Incremental.scala:169)
+	at sbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:528)
+	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:482)
+	at sbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)
+	... 23 common frames omitted
