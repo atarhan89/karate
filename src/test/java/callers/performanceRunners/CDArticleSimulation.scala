@@ -9,13 +9,20 @@ class CDArticleSimulation extends Simulation {
   val protocol = karateProtocol()
 
  // protocol.nameResolver = (req, ctx) => req.getHeader("karate-name")
+ val usersCount = System.getProperty("usersCount")
+  val duration = System.getProperty("duration")
+  val featureName = System.getProperty("featureName")
+  val tagName = System.getProperty("tagName")
+
+  val createArticle = scenario("Create An Article").feed(article).feed(tokenFeeder).exec(karateFeature("classpath:features/performanceFeatures/" +featureName +".feature@"+tagName+""))
 
 
-  val createArticle = scenario("Create An Article").exec(karateFeature("classpath:features/performanceFeatures/createArticle.feature@load"))
+  // mvn clean test-compile gatling:test -Dgatling.simulationClass=performanceRunners.CDArticleSimulation
+  // mvn clean test-compile gatling:test -Dgatling.simulationClass=src.test.java.performanceRunners.CDArticleSimulation
 
   setUp(
-    createArticle.inject(rampUsers(5) during (5.seconds)).protocols(protocol)
-  )
+    createArticle.inject(rampUsers(usersCount.toInt) during Duration(duration.toInt, SECONDS)).protocols(protocol)
+  );
   // mvn clean test-compile gatling:test -Dgatling.simulationClass=performanceRunners.CDArticleSimulation
   // mvn clean test-compile gatling:test -DsimulationClass=performanceRunners.CDArticleSimulation
 
